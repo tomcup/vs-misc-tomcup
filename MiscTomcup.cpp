@@ -33,7 +33,7 @@ static const VSFrame* VS_CC filterGetFrame(int n, int activationReason, void* in
 
 		VSFrame* dst = vsapi->copyFrame(frame, core);
 		VSMap* rwprops = vsapi->getFramePropertiesRW(dst);
-		vsapi->mapSetInt(rwprops, "_SceneChangeNext", d->scdata.find(n) != d->scdata.end(), maReplace);
+		vsapi->mapSetInt(rwprops, "_SceneChangeNext", d->scdata.contains(n), maReplace);
 
 		vsapi->freeFrame(frame);
 
@@ -77,6 +77,6 @@ static void VS_CC filterCreate(const VSMap* in, VSMap* out, void* userData, VSCo
 }
 
 VS_EXTERNAL_API(void) VapourSynthPluginInit2(VSPlugin* plugin, const VSPLUGINAPI* vspapi) {
-	vspapi->configPlugin("com.tomcup.SCDetect", "tomcup", "Mark the clip with PySceneDetect's output", VS_MAKE_VERSION(1, 0), VAPOURSYNTH_API_VERSION, 0, plugin);
+	vspapi->configPlugin("com.tomcup.SCDetect", "tomcup", "Mark the clip with PySceneDetect's output", VS_MAKE_VERSION(1, 1), VAPOURSYNTH_API_VERSION, 0, plugin);
 	vspapi->registerFunction("SCDetect", "clip:vnode;scfile:data", "clip:vnode;", filterCreate, 0, plugin);
 }
