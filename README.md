@@ -28,11 +28,6 @@
 2. 经实验，`VapourSynthx64` R63 以第 0 帧作为起始帧，`PySceneDetect` v0.6.1 以第 1 帧作为起始帧，故在代码实现中要对 `PySceneDetect` 的输出进行减 1 操作。 
 
 # 感谢以下项目
-[PySceneDetect](https://github.com/Breakthrough/PySceneDetect)
-[VapourSynth](http://www.vapoursynth.com/)
-[csv-parser](https://github.com/vincentlaucsb/csv-parser)
-
-# 备注
-开发者不积极维护此项目，如果发现问题，很可能无法及时回复。
-
-如需联系，请使用邮箱。开发者多半会在节假日进行回复。（原因略）
+- [PySceneDetect](https://github.com/Breakthrough/PySceneDetect)
+- [VapourSynth](http://www.vapoursynth.com/)
+- [csv-parser](https://github.com/vincentlaucsb/csv-parser)
